@@ -1,0 +1,2 @@
+# HackerrankSQL
+Hackerrank SQL queries
