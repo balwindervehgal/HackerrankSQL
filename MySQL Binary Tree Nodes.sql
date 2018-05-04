@@ -20,3 +20,16 @@ union
 select N, 'Inner' from BST a where P is not null
 and exists (select 1 from BST b where a.N = b.P)
 order by N
+
+
+#OR
+
+
+SELECT N,
+CASE
+WHEN P is NULL THEN 'Root'
+WHEN N in (SELECT P FROM BST) THEN 'Inner'
+ELSE 'Leaf'
+END
+FROM BST
+ORDER by N;
